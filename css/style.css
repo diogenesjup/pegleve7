@@ -1,0 +1,454 @@
+/*
+	DIOGENES JUNIOR
+	CONTATO@DIOGENESJUNIOR.COM.BR
+
+*/
+
+/*---------------------------------
+	IMPORTS E CONSULTAS
+-----------------------------------*/
+
+/*---------------------------------
+	ESTILOS
+-----------------------------------*/
+html,body{
+    height: 100%;
+}
+body{
+	overflow-x: hidden;
+    background:#fff;
+    overflow-y: hidden !important;
+}
+
+*{
+  text-shadow: none !important;
+}
+::selection { background: #000; color: #fff; } ::-moz-selection { background: #000; color: #fff; }
+
+@media(min-width: 540px){
+  body{
+    display: none;
+  }
+}
+
+
+
+.cover{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../images/cover.jpg") no-repeat;
+  background-size: 100% 100%;
+  z-index: 9999;
+  text-align: center;
+  padding-top: 40%;
+}
+
+.cover img{
+  max-width: 40%;
+  height: auto;
+}
+
+.slide-abertura{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 8888;
+}
+
+.slide-abertura .carousel-inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+.slide-abertura .slide{
+  position: relative;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.slide-abertura .slide .item{
+
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden !important;
+  padding-top: 40px;
+  text-align: center !important;
+}
+
+.slide-abertura .slide .item img{
+  width: 80%;
+  height: auto;
+}
+
+.slide-abertura .close{
+  position: absolute;
+  top:10px;
+  right:15px;
+  cursor: pointer;
+  z-index: 8889;
+  font-size: 1.6em;
+  color:#fff;
+  opacity: 1 !important;
+}
+
+.item-a{
+  background: #99dad0;
+}
+.item-b{
+  background: #99daa1;
+}
+.item-c{
+  background: #99cbda;
+}
+
+/* STATUS BAR */
+.status-bar{
+  position: absolute;
+  top: 0px;
+  left: 0;
+  height: 20px;
+  width: 100%;
+  background: #ffcd00;
+  z-index: 7777;
+}
+
+/* NEVEGAÇÃO */
+.navegacao{
+  position: absolute;
+  bottom: 0px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row /* works with row or column */
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  left: 0;
+  height: 49px;
+  width: 100%;
+  background: #000;
+  z-index: 7777;
+}
+
+.menus{
+  margin-left: 16px;
+  margin-right: 16px;
+  color:#fff;
+  font-size:0.8em;
+  text-align:center;
+  padding-top:28px;
+  margin-top:-11.5px;
+}
+
+.menus a{
+  float: left;
+  display: block;
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: 9999;
+  text-align: center;
+  padding-top: 27px;
+  width: 100%;
+  height: 100%;
+  text-decoration: none !important;
+  color:#fff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* MENU 1 */
+.menu1{
+    position: relative;
+    background: url('../images/sprite-menu.png') no-repeat -24px -7px;
+  	width: 27px;
+  	height: 27px;
+}
+.menu1-active{
+    position: relative;
+    background: url('../images/sprite-menu.png') no-repeat -22px -75px;
+  	width: 27px;
+  	height: 27px;
+}
+
+
+/* MENU 2 */
+.menu2{
+    position: relative;
+    background: url('../images/sprite-menu.png') no-repeat -98px -10px;
+  	width: 38px;
+  	height: 21px;
+}
+.menu2-active{
+    position: relative;
+    background: url('../images/sprite-menu.png') no-repeat -96px -78px;
+  	width: 38px;
+  	height: 21px;
+}
+
+
+/* MENU 3 */
+.menu3{
+    position: relative;
+    background: url('../images/sprite-menu.png') no-repeat -191px -4px;
+  	width: 22px;
+  	height: 29px;
+}
+.menu3-active{
+    position: relative;
+    background: url('../images/sprite-menu.png') no-repeat -189px -72px;
+  	width: 23px;
+  	height: 28px;
+}
+
+
+/* MENU 4 */
+.menu4{
+    position: relative;
+    background: url('../images/sprite-menu.png') no-repeat -269px -5px;
+  	width: 31px;
+  	height: 27px;
+}
+.menu4-active{
+    position: relative;
+    background: url('../images/sprite-menu.png') no-repeat -267px -73px;
+  	width: 31px;
+  	height: 26px;
+}
+
+
+/* MENU 5 */
+.menu5{
+    position: relative;
+    background: url('../images/sprite-menu.png') no-repeat -350px -7px;
+  	width: 28px;
+  	height: 28px;
+}
+.menu5-active{
+  position: relative;
+  background: url('../images/sprite-menu.png') no-repeat -349px -75px;
+  width: 28px;
+  height: 28px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* TITULO DA PÁGINA */
+.app-titulo-pagina{
+  background: #ffcd00;
+  height: 44px;
+  margin-top: 20px;
+}
+
+.app-titulo-pagina .area-titulo{
+  text-align: center;
+}
+
+.app-titulo-pagina .area-titulo h3{
+  margin-top: 0px;
+  padding-top: 7px;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.app-titulo-pagina .app-back-link,
+.app-titulo-pagina .app-forw-link{
+  padding-top: 7px;
+  text-align: center;
+}
+
+.app-titulo-pagina .app-back-link a,
+.app-titulo-pagina .app-forw-link a{
+  font-size: 1.4em;
+  color:#000;
+  text-decoration: none;
+}
+
+/* CONTEUDO WORK */
+.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper {
+    background-color: #fff !important;
+    border:none !important;
+    color: #333;
+    text-shadow: none !important;
+}
+.work{
+  position: relative;
+  top:20px;
+  left: 0;
+  width: 100%;
+  height: 500px;
+  max-height: 500px;
+  padding-bottom: 155px;
+  overflow-y: scroll;
+  z-index: 1;
+  font-family: 'Montserrat', sans-serif;
+  /*-webkit-animation: slideIn 1s forwards;
+  -moz-animation: slideIn 1s forwards;
+  animation: slideIn 1s forwards;*/
+}
+
+
+@-webkit-keyframes slideIn {
+0% {
+transform: translateX(-900px);
+}
+100% {
+transform: translateX(0);
+}
+}
+@-moz-keyframes slideIn {
+0% {
+transform: translateX(-900px);
+}
+100% {
+transform: translateX(0);
+}
+}
+@keyframes slideIn {
+0% {
+transform: translateX(-900px);
+}
+100% {
+transform: translateX(0);
+}
+}
+
+::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    background: #F4F4F4;
+}
+::-webkit-scrollbar-thumb {
+    background: #dad7d7;
+}
+
+
+
+
+.work .btn-default,.work .btn-default:hover,.work .btn-default:active,.work .btn-default:visited{
+  width: 100%;
+  background: #ECEFF1;
+  color:#000;
+  font-weight: normal;
+  border-radius: 0px !important;
+}
+
+
+
+.work a{
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  color:#000;
+}
+
+.work .logo{
+  margin-top: 68px;
+}
+
+.work .logo img{
+  width: 240px;
+  height: auto;
+}
+
+.work .btn-primary{
+  background: #000;
+  border-color: #000;
+  border-radius: 20px;
+  font-family: 'Montserrat', sans-serif;
+  min-width: 200px;
+}
+
+.work .btn-primary.btn-sm {
+    background: #000;
+    border-color: #000;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+    min-width: 30px;
+    color:#fff !important;
+}
+
+
+.work .form-control{
+  background: #f9f9f9;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.work .login-apoio a{
+  font-size: 0.9em;
+}
+
+h4.panel-title a,h4.panel-title a:hover{
+  text-shadow: none !important;
+  font-weight: normal;
+  color:#747474 !important;
+}
+
+
+
+/* ESTILOS DO MAPA */
+#mapa{
+  position: absolute;
+  top:64px;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  z-index: 4444;
+ /*  -webkit-animation: slideIn 1s forwards;
+  -moz-animation: slideIn 1s forwards;
+  animation: slideIn 1s forwards; */
+}
+
+
+
+/* INSIRA SEU DESTINO */
+.insira-seu-destino{
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background: #fff;
+  padding-top: 20px;
+  padding-bottom: 5px;
+  border-top:0px solid #bfbfbf;
+  color:#747474;
+  z-index: 5555;
+}
+
+.insira-seu-destino,.insira-seu-destino p,.insira-seu-destino p b{
+  color:#747474;
+}
+
+.insira-seu-destino .btn-primary,
+.insira-seu-destino .btn-primary:hover,
+.insira-seu-destino .btn-primary:active,
+.insira-seu-destino .btn-primary:hover:active,
+.insira-seu-destino .btn-primary:active:hover,
+.insira-seu-destino .btn-primary:visited{
+  width: 100%;
+  background: #000;
+  border-radius: 0;
+  font-size: 1.2em;
+  font-family: 'Montserrat', sans-serif;
+  border-color: #000;
+  color:#fff !important;
+}

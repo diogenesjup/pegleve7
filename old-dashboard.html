@@ -1,0 +1,165 @@
+<!--
+#
+# DIOGENES OLIVEIRA DOS SANTOS JUNIOR
+# WWW.DIOGENESJUNIOR.COM.BR
+# CONTATO@DIOGENESJUNIOR.COM.BR
+#
+-->
+<!DOCTYPE html>
+<html lang="pt-br"><head>
+<title>Pegleve</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffcd00">
+
+
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="all" />
+
+<link rel="stylesheet" type="text/css" href="css/style.css?v=4" />
+
+
+<!-- ICONES -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- GOOGLE -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
+
+</head>
+<body>
+
+
+<!-- STATUS BAR -->
+<div class="status-bar">
+  &nbsp;
+</div>
+<!-- STATUS BAR -->
+
+<!-- NAVEGAÇÃO -->
+<div class="navegacao">
+
+    <div class="menus menu1-active">
+      <a href="#pageone" data-transition="slideup">Viajar</a>
+    </div>
+    <div class="menus menu2">
+      <a href="#pagetwo" data-transition="slideup">Viagens</a>
+    </div>
+    <div class="menus menu3">
+      <a href="#">Perfil</a>
+    </div>
+    <div class="menus menu4">
+      <a href="#">Ajuda</a>
+    </div>
+    <div class="menus menu5">
+      <a href="#">Config</a>
+    </div>
+
+</div>
+<!-- NAVEGAÇÃO -->
+
+
+<div data-role="page" id="pageone">
+
+<!-- TITULO PÁGINA -->
+<div class="app-titulo-pagina">
+    <div class="container">
+       <div class="row">
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 app-back-link">
+              <!--<a href="javascript:history.back();">
+                <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+              </a>--> &nbsp;
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 area-titulo">
+              <h3>Para onde vamos?</h3>
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 app-forw-link">
+              <a href="#">
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+              </a>
+          </div>
+       </div>
+    </div>
+</div>
+<!-- TITULO PÁGINA -->
+
+
+<!-- MAPA -->
+<div id="mapa" style="height: 100%; width: 100%;"></div>
+<!-- MAPA -->
+
+
+<!-- INSIRA SEU DESTINO -->
+<div class="insira-seu-destino" id="resultadoGeocodingMatrix">
+  <div class="col-sm-1 col-xs-1">&nbsp;</div>
+      <div class="col-lg-12 col-md-12 col-sm-10 col-xs-10 text-center">
+         <div class="form-group">
+           <input type="text" name="origem" id="enderecoOrigemMatrix" class="form-control" placeholder="Origem" />
+         </div>
+         <div class="form-group">
+           <input type="text" name="destino" id="enderecoDestinoMatrix" class="form-control" placeholder="Destino" />
+         </div>
+         <div class="form-group">
+           <select name="tipoTransporte" class="form-control" id="tipoVeiculo">
+               <option value="carro">Tipo de veículo</option>
+               <option value="carro">Carro</option>
+               <option value="moto">Moto</option>
+               <option value="van">Van</option>
+               <option value="micro-onibus">Micro-ônibus</option>
+               <option value="onibus">Ônibus</option>  
+           </select>
+         </div>
+         <div class="form-group">
+           <button class="btn btn-primary" id="getInfoEnderecoDistMatrix">PROCURAR VIAGEM</button>
+         </div>
+      </div>
+</div>
+<!-- INSIRA SEU DESTINO -->
+
+
+<!-- CONTEUDO -->
+<div class="work">
+  <div class="container">
+
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        carregando localização...
+      </div>
+
+  </div>
+</div>
+<!-- CONTEUDO -->
+
+</div>
+
+
+<div data-role="page" id="pagetwo">
+  <div data-role="header">
+    <h1>Eu sou a página 2</h1>
+  </div>
+
+  <div data-role="main">
+    <p>Click on the link to go back. <b>Note</b>: fade is default.</p>
+    <a href="#pageone">Go to Page One</a>
+  </div>
+
+  <div data-role="footer">
+    <h1>Footer Text</h1>
+  </div>
+</div>
+
+
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUGRiH2iey-c2WqqeegGF2qpxBDNLsmfQ&libraries=places"></script> 
+    <script type="text/javascript" src="js/scripts.js?v=8"></script>
+    <script type="text/javascript" src="js/mapa.js?v=11"></script>
+
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+
+    <script type="text/javascript">
+      verificarSessao();
+    </script>
+
+</body>
+</html>

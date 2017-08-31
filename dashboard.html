@@ -1,0 +1,720 @@
+<!--
+#
+# DIOGENES OLIVEIRA DOS SANTOS JUNIOR
+# WWW.DIOGENESJUNIOR.COM.BR
+# CONTATO@DIOGENESJUNIOR.COM.BR
+#
+-->
+<!DOCTYPE html>
+<html lang="pt-br"><head>
+<title>Pegleve</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffcd00">
+
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="all" />
+
+<link rel="stylesheet" type="text/css" href="css/style.css?v=6" />
+
+<!-- ICONES -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- GOOGLE -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
+
+</head>
+<body>
+
+
+<!-- STATUS BAR -->
+<div class="status-bar">
+  &nbsp;
+</div>
+<!-- STATUS BAR -->
+
+<!-- NAVEGAÇÃO PRINCIPAL -->
+<div class="navegacao">
+
+    <div class="menus menu1">
+      <a href="dashboard.html">Início</a>
+    </div>
+    <div class="menus menu2">
+      <a href="#paginaViagemUnica" data-transition="slideup">Viajar</a>
+    </div>
+    <div class="menus menu3">
+      <a href="#paginaPerfil" data-transition="slideup">Perfil</a>
+    </div>
+    <div class="menus menu4">
+      <a href="#paginaAjuda" data-transition="slideup">Ajuda</a>
+    </div>
+    <div class="menus menu5">
+      <a href="#paginaConfig" data-transition="slideup">Config</a>
+    </div>
+
+</div>
+<!-- NAVEGAÇÃO PRINCIPAL -->
+
+
+
+
+<!-- PAGINA INICIO / PAGINA ONE -->
+<div data-role="page" id="pageone">
+
+<!-- TITULO PÁGINA -->
+<div class="app-titulo-pagina">
+    <div class="container">
+       <div class="row">
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 app-back-link">
+              <!--<a href="javascript:history.back();">
+                <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+              </a>--> &nbsp;
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 area-titulo">
+              <h3>Início</h3>
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 app-forw-link">
+              <a href="index.html">
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+              </a>
+          </div>
+       </div>
+    </div>
+</div>
+<!-- TITULO PÁGINA -->
+
+
+
+
+
+<!-- CONTEUDO -->
+<div class="work">
+  <div class="container">
+
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <p>Escolha uma das opções abaixo, ou use a barra de navegação:</p>
+          <p>&nbsp;</p>
+          <p>
+             <a href="#paginaViagemUnica" data-transition="slideup" class="btn btn-default">Viagem única</a>
+          </p>
+          <p>
+            <a href="#paginaViagemRecorrente" data-transition="slideup" class="btn btn-default">Viagem recorrente</a>
+          </p>
+          <p>
+            <a href="#paginaAluguelMaquina" data-transition="slideup" class="btn btn-default">Aluguel de máquina</a>
+          </p>
+          <p>
+            <a href="#paginaMeusAgendamentos" data-transition="slideup" class="btn btn-default">Meus agendamentos</a>
+          </p>
+      </div>
+
+  </div>
+</div>
+<!-- CONTEUDO -->
+
+</div>
+<!-- PAGINA INICIO / PAGINA ONE -->
+
+
+<!-- PAGINA VIAGEM UNICA -->
+<div data-role="page" id="paginaViagemUnica">
+
+    <!-- TITULO PÁGINA -->
+    <div class="app-titulo-pagina">
+        <div class="container">
+           <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 app-back-link">
+                  <a href="#pageone">
+                    <i class="fa fa-undo" aria-hidden="true"></i>
+                  </a>
+              </div>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 area-titulo">
+                  <h3>Viagem única</h3>
+              </div>
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 app-forw-link">
+                  <!-- --> &nbsp;
+              </div>
+           </div>
+        </div>
+    </div>
+    <!-- TITULO PÁGINA -->
+
+
+    <!-- CONTEUDO -->
+    <div class="work">
+      <div class="container">
+
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <p>Nessa tela, você pode solicitar uma viagem única de um de nossos motoristas:</p>
+              <p>&nbsp;</p>
+              
+          </div>
+
+      </div>
+      
+
+
+              <!-- INSIRA SEU DESTINO -->
+              <div class="insira-seu-destino" id="resultadoGeocodingMatrix">
+                <div class="col-sm-1 col-xs-1">&nbsp;</div>
+                    <div class="col-lg-12 col-md-12 col-sm-10 col-xs-10 text-center">
+                       <div class="form-group">
+                         <input type="text" name="origem" id="enderecoOrigemMatrix" class="form-control" placeholder="Origem (Rua, número, bairro)" />
+                       </div>
+                       <div class="form-group">
+                         <input type="text" name="destino" id="enderecoDestinoMatrix" class="form-control" placeholder="Destino (Rua, número, bairro)" />
+                       </div>
+                       <div class="form-group">
+                         <select name="tipoTransporte" class="form-control" id="tipoVeiculo">
+                             <option value="carro">Tipo de veículo</option>
+                             <option value="carro">Carro</option>
+                             <option value="moto">Moto</option>
+                             <option value="van">Van</option>
+                             <option value="micro-onibus">Micro-ônibus</option>
+                             <option value="onibus">Ônibus</option>  
+                         </select>
+                       </div>
+                       <div class="form-group">
+                         <button class="btn btn-primary" id="getInfoEnderecoDistMatrix">PROCURAR VIAGEM</button>
+                       </div>
+                    </div>
+              </div>
+              <!-- INSIRA SEU DESTINO -->
+
+
+    </div>
+    <!-- CONTEUDO -->
+
+  
+</div>
+<!-- PAGINA VIAGEM UNICA -->
+
+
+<!-- PAGINA VIAGEM UNICA RESULTADO -->
+<div data-role="page" id="paginaViagemUnicaConfirmacao">
+
+    <!-- TITULO PÁGINA -->
+    <div class="app-titulo-pagina">
+        <div class="container">
+           <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 app-back-link">
+                  <a href="#pageone">
+                    <i class="fa fa-undo" aria-hidden="true"></i>
+                  </a>
+              </div>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 area-titulo">
+                  <h3>Viagem única</h3>
+              </div>
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 app-forw-link">
+                  <!-- --> &nbsp;
+              </div>
+           </div>
+        </div>
+    </div>
+    <!-- TITULO PÁGINA -->
+    
+    <!-- CONTEUDO -->
+    <div class="work">
+      <div class="container">
+
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+              <p style="text-align: center;color:#7CB342;">
+                <i class="fa fa-check-circle fa-3x" aria-hidden="true"></i>
+              </p>
+              <h3 style="text-align: center;">Muito bem! Sua viagem foi solicitada</h3>
+              <p>Em breve um dos nossos motoristas irá aceitá-la.</p>
+              <p>
+                <b>Meu saldo já será descontado?</b> Não, seu saldo só será descontado, quando um motorista aceitar a viagem.
+              </p>
+              <p>
+                <b>Como eu serei avisado?</b> Fique atento ao seu e-mail, e ao menu <a href="#paginaMeusAgendamentos">"Meus agendamentos"</a>.
+              </p>
+              <p>
+                <b>Posso cancelar uma viagem que solicitei?</b> Sim, antes de um motorista aceita-la, você pode cancelar a viagem no menu <a href="#paginaMeusAgendamentos">"Meus agendamentos"</a>.
+              </p>
+              <p>&nbsp;</p>
+              
+          </div>
+
+      </div>
+    </div>  
+
+
+  
+</div>
+<!-- PAGINA VIAGEM UNICA RESULTADO -->
+
+
+
+<!-- PAGINA VIAGEM RECORRENTE -->
+<div data-role="page" id="paginaViagemRecorrente">
+
+    <!-- TITULO PÁGINA -->
+    <div class="app-titulo-pagina">
+        <div class="container">
+           <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 app-back-link">
+                  <a href="#pageone">
+                    <i class="fa fa-undo" aria-hidden="true"></i>
+                  </a>
+              </div>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 area-titulo">
+                  <h3>Viagem recorrente</h3>
+              </div>
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 app-forw-link">
+                  <!-- --> &nbsp;
+              </div>
+           </div>
+        </div>
+    </div>
+    <!-- TITULO PÁGINA -->
+
+
+    <!-- CONTEUDO -->
+    <div class="work">
+      <div class="container">
+
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <p>Nessa tela, você pode agendar viagens recorrentes. Ideal para fretados e eventos diários, semanais ou mensais</p>
+              <p>
+                <a href="#" class="btn btn-default">Solicitar viagem recorrente</a>
+              </p>
+              
+              <p>&nbsp;</p>
+              <h4 style="text-align: center;">Viagens já disponíveis</h4> 
+              <p>&nbsp;</p>
+              
+          </div>
+
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <table class="table table-striped" style="font-size: 0.82em;">
+                 <thead>
+                   <th><b>Nome</b></th>
+                   <th><b>Origem/Destino</b></th>
+                   <th>&nbsp;</th>
+                 </thead>
+
+                 <tbody>
+                   <tr>
+                     <td>FRETADO SÃO JOÃO</td>
+                     <td>Av Paulista / Petrobras</td>
+                     <td><a href="#" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a></td>
+                   </tr>
+
+                   <tr>
+                     <td>FRETADO SÃO JOSÉ</td>
+                     <td>Av Paulista / Petrobras</td>
+                     <td><a href="#" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a></td>
+                   </tr>
+
+                    <tr>
+                     <td>FRETADO RAIMUNDO</td>
+                     <td>Av Paulista / Petrobras</td>
+                     <td><a href="#" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a></td>
+                   </tr>
+
+
+                 </tbody>
+            </table>
+          </div>
+
+      </div>
+    </div>
+    <!-- CONTEUDO -->
+
+  
+</div>
+<!-- PAGINA VIAGEM RECORRENTE -->
+
+
+
+
+<!-- PAGINA ALUGUEL DE MAQUINA -->
+<div data-role="page" id="paginaAluguelMaquina">
+
+    <!-- TITULO PÁGINA -->
+    <div class="app-titulo-pagina">
+        <div class="container">
+           <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 app-back-link">
+                  <a href="#pageone">
+                    <i class="fa fa-undo" aria-hidden="true"></i>
+                  </a>
+              </div>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 area-titulo">
+                  <h3>Aluguel</h3>
+              </div>
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 app-forw-link">
+                  <!-- --> &nbsp;
+              </div>
+           </div>
+        </div>
+    </div>
+    <!-- TITULO PÁGINA -->
+
+
+    <!-- CONTEUDO -->
+    <div class="work">
+      <div class="container">
+
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <p>Nessa tela, você alugar e gerênciar máquinas:</p>
+              <p>&nbsp;</p>
+              
+          </div>
+
+      </div>
+    </div>
+    <!-- CONTEUDO -->
+
+  
+</div>
+<!-- PAGINA ALUGUEL DE MAQUINA -->
+
+
+
+
+
+
+
+
+
+<!-- PAGINA MEUS AGENDAMENTOS -->
+<div data-role="page" id="paginaMeusAgendamentos">
+
+    <!-- TITULO PÁGINA -->
+    <div class="app-titulo-pagina">
+        <div class="container">
+           <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 app-back-link">
+                  <a href="#pageone">
+                    <i class="fa fa-undo" aria-hidden="true"></i>
+                  </a>
+              </div>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 area-titulo">
+                  <h3>Agendamentos</h3>
+              </div>
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 app-forw-link">
+                  <!-- --> &nbsp;
+              </div>
+           </div>
+        </div>
+    </div>
+    <!-- TITULO PÁGINA -->
+
+
+    <!-- CONTEUDO -->
+    <div class="work">
+      <div class="container">
+
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <p>Nessa tela, você pode consultar todos os seus agendamentos:</p>
+              <p>&nbsp;</p>
+              
+          </div>
+
+      </div>
+    </div>
+    <!-- CONTEUDO -->
+
+  
+</div>
+<!-- PAGINA MEUS AGENDAMENTOS -->
+
+
+
+<!-- PAGINA PERFIL -->
+<div data-role="page" id="paginaPerfil">
+
+    <!-- TITULO PÁGINA -->
+    <div class="app-titulo-pagina">
+        <div class="container">
+           <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 app-back-link">
+                  <a href="#pageone">
+                    <i class="fa fa-undo" aria-hidden="true"></i>
+                  </a>
+              </div>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 area-titulo">
+                  <h3>Perfil</h3>
+              </div>
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 app-forw-link">
+                  <!-- --> &nbsp;
+              </div>
+           </div>
+        </div>
+    </div>
+    <!-- TITULO PÁGINA -->
+
+
+    <!-- CONTEUDO -->
+    <div class="work">
+      <div class="container">
+
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <p>Nessa tela você pode atualizar seus dados pessoais:</p>
+              <p>&nbsp;</p>
+                             
+
+
+                             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+                              <!-- FOTO PERFIL --> 
+                              <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingOne">
+                                  <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                      Atualizar foto de Perfil
+                                    </a>
+                                  </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                  <div class="panel-body">
+                                      <h4 style="text-align: center;">Atualizar foto de perfil</h4> 
+                                        <p>&nbsp;</p>
+                                          <p style="text-align: center;">
+                                             <img src="" id="fotoPerfil" style="width: 75%;height: auto;padding: 3px;border:1px solid #f2f2f2;">
+                                          </p>   
+                                        <p>&nbsp;</p>
+
+                                        <div class="form-group">
+                                          <input type="file" id="fileUpload" name="fileUpload" />
+                                        </div>
+                                        <div class="form-group">
+                                           <button class="btn btn-default" id="btnEnviarFoto">ATUALIZAR FOTO DE PERFIL</button>
+                                        </div> 
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- FOTO PERFIL -->
+
+                              <!-- DADOS PESSOAIS -->
+                              <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingTwo">
+                                  <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                      Atualizar dados pessoais
+                                    </a>
+                                  </h4>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                  <div class="panel-body">
+                                            <h4 style="text-align: center;">Seus dados</h4> 
+                                            <p>&nbsp;</p>
+
+                                            <div class="form-group">
+                                              <label>Seu nome</label>
+                                              <input type="text" name="nome" class="form-control" placeholder="Seu nome" id="perfilNome">
+                                            </div>
+
+                                            <div class="form-group">
+                                              <label>Seu e-mail</label>
+                                              <input type="email" name="email" class="form-control" placeholder="Seu email" id="perfilEmail" disabled>
+                                            </div>
+
+                                            <div class="form-group">
+                                              <label>Senha de acesso</label>
+                                              <input type="password" name="senha" class="form-control" placeholder="Sua senha de acesso" id="perfilSenha">
+                                            </div>
+
+                                            <div class="form-group">
+                                              <button class="btn btn-default">ATUALIZAR DADOS</button>
+                                            </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- DADOS PESSOAIS -->
+
+                              <!-- PAGAMENTOS -->
+                              <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingThree">
+                                  <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                      Adicionar saldo a sua conta
+                                    </a>
+                                  </h4>
+                                </div>
+                                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                  <div class="panel-body">
+                                    Aqui dados saldo
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- PAGAMENTOS -->
+
+
+                            </div>
+
+              
+          </div>
+
+      </div>
+    </div>
+    <!-- CONTEUDO -->
+
+  
+</div>
+<!-- PAGINA PERFIL -->
+
+
+
+
+
+
+
+
+
+
+<!-- PAGINA AJUDA -->
+<div data-role="page" id="paginaAjuda">
+
+    <!-- TITULO PÁGINA -->
+    <div class="app-titulo-pagina">
+        <div class="container">
+           <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 app-back-link">
+                  <a href="#pageone">
+                    <i class="fa fa-undo" aria-hidden="true"></i>
+                  </a>
+              </div>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 area-titulo">
+                  <h3>Ajuda</h3>
+              </div>
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 app-forw-link">
+                  <!-- --> &nbsp;
+              </div>
+           </div>
+        </div>
+    </div>
+    <!-- TITULO PÁGINA -->
+
+
+    <!-- CONTEUDO -->
+    <div class="work">
+      <div class="container">
+
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <p>Nessa tela você encontra respostas para as principais perguntas, ou então, solicitar atendimento para algum problema que teve com a plataforma:</p>
+              <p>&nbsp;</p>
+              
+          </div>
+
+      </div>
+    </div>
+    <!-- CONTEUDO -->
+
+  
+</div>
+<!-- PAGINA AJUDA -->
+
+
+
+<!-- PAGINA CONFIGURAÇÕES -->
+<div data-role="page" id="paginaConfig">
+
+    <!-- TITULO PÁGINA -->
+    <div class="app-titulo-pagina">
+        <div class="container">
+           <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 app-back-link">
+                  <a href="#pageone">
+                    <i class="fa fa-undo" aria-hidden="true"></i>
+                  </a>
+              </div>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 area-titulo">
+                  <h3>Configurações</h3>
+              </div>
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 app-forw-link">
+                  <!-- --> &nbsp;
+              </div>
+           </div>
+        </div>
+    </div>
+    <!-- TITULO PÁGINA -->
+
+
+    <!-- CONTEUDO -->
+    <div class="work">
+      <div class="container">
+
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <p>Nessa tela você pode alterar as configurações gerais do aplicativo:</p>
+              <p>&nbsp;</p>
+              
+          </div>
+
+      </div>
+    </div>
+    <!-- CONTEUDO -->
+
+  
+</div>
+<!-- PAGINA CONFIGURAÇÕES -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUGRiH2iey-c2WqqeegGF2qpxBDNLsmfQ&libraries=places"></script> 
+    <script type="text/javascript" src="js/scripts.js?v=17"></script>
+    <script type="text/javascript" src="js/mapa.js?v=22"></script>
+
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <script type="text/javascript">
+     
+      verificarSessao();
+      preencherPerfil();
+      
+      // UPLOAD DE FOTO DO PERFIL DE USUÁRIO
+      // FIZEMOS FORA DO ARQUIVO DE SCRIPTS POR QUE NÃO QUIS DEIXAR ELA DENTRO DE UMA FUNÇÃO
+      $(function () {
+        
+        var form;
+        $('#fileUpload').change(function (event) {
+            form = new FormData();
+            form.append('fileUpload', event.target.files[0]); // PARA APENAS 1 ARQUIVO
+            //var name = event.target.files[0].content.name; // PARA CAPTURAR O NOME DO ARQUIVO COM SUA EXTENÇÃO
+        });
+
+        $('#btnEnviarFoto').click(function () {
+            $('#btnEnviarFoto').html("processando imagem");
+            var idUsuarioLogado = localStorage.getItem("idUsuario");
+
+            $.ajax({
+                url: 'https://104.238.100.93/~peglevecom/administrativo/api-upload.php?idUsuarioLogado='+idUsuarioLogado, // URL DO LADO SERVER QUE VAI RECEBER O ARQUIVO
+                data: form,
+                processData: false,
+                contentType: false,
+                type: 'POST',
+                success: function (data) {
+                    console.log(data);
+                    alert("Foto Atualizada com sucesso!");
+                    $('#btnEnviarFoto').html("ATUALIZAR FOTO DE PERFIL");
+                    location.reload();
+                }
+            });
+        });
+    });
+
+    </script>
+
+</body>
+</html>
